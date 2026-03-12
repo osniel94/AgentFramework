@@ -31,4 +31,4 @@ Para que el merge automático sea seguro y realmente funcione:
 
 1. Crear PR.
 2. Agregar etiqueta `automerge`.
-3. Cuando el check de CI pase y se cumplan las reglas de protección, GitHub realizará el merge automáticamente.
+3. Cuando el check de CI pase y se cumplan las reglas de protección, GitHub realizará el merge automáticamente
