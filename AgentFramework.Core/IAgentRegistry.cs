@@ -1,0 +1,1 @@
+// IAgentRegistry.cs content here
