@@ -17,7 +17,15 @@ public sealed class AgentRegistry
         }
     }
 
-    public void Register(IAgent agent) => _agents[agent.Name] = agent;
+    public void Register(IAgent agent)
+    {
+        ArgumentNullException.ThrowIfNull(agent);
+
+        if (!_agents.TryAdd(agent.Name, agent))
+        {
+            throw new InvalidOperationException($"An agent named '{agent.Name}' is already registered.");
+        }
+    }
 
     public IAgent? Resolve(string name) => _agents.TryGetValue(name, out var agent) ? agent : null;
 
